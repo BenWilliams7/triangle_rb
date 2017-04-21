@@ -9,4 +9,7 @@ describe "String#anagram" do
   it("Returns true if two words are anagrams.") do
     expect("ruby".anagram("bury")).to(eq("True"))
   end
+  it("Returns false if the length is not equal") do
+    expect("ruby".anagram("burrito")).to(eq("False"))
+  end
 end
