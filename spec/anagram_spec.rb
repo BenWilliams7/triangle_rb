@@ -12,4 +12,7 @@ describe "String#anagram" do
   it("Returns false if the length is not equal") do
     expect("ruby".anagram("burrito")).to(eq("False"))
   end
+  it("Accounts for the possibility that words w/ different cases are still anagrams") do
+    expect("RuBy".anagram("bUrY")).to(eq("True"))
+  end
 end
