@@ -1,7 +1,7 @@
 class String
   def anagram(word2)
-    word1 = self.downcase.split('')
-    anaCheck = word2.downcase.split('')
+    word1 = self.gsub(/\s+/, "").downcase.split('')
+    anaCheck = word2.gsub(/\s+/, "").downcase.split('')
     anaLength = 0
     lackVowels = 0
     anaCheck.each do |char|

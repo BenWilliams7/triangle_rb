@@ -4,13 +4,13 @@ require("pry")
 
 describe "String#anagram" do
   it("Returns false if two words are not anagrams.") do
-    expect("ruby".anagram("hard")).to(eq("This is not an anagram"))
+    expect("ruby".anagram("hard")).to(include("This is not an anagram"))
   end
   it("Returns true if two words are anagrams.") do
     expect("ruby".anagram("bury")).to(include("These words are anagrams"))
   end
   it("Returns false if the length is not equal") do
-    expect("ruby".anagram("burrito")).to(eq("This is not an anagram"))
+    expect("ruby".anagram("burrito")).to(include("This is not an anagram"))
   end
   it("Accounts for the possibility that words w/ different cases are still anagrams") do
     expect("RuBy".anagram("bUrY")).to(include("These words are anagrams"))
@@ -23,5 +23,8 @@ describe "String#anagram" do
   end
   it("Returns an error if anagrams do not include vowels") do
     expect("ruby".anagram("rrrr")).to(eq("This is not a word because it has no vowels!"))
+  end
+  it("Doesn't care about non-letter characters") do
+    expect("ru by".anagram("bury")).to(include("These words are anagrams"))
   end
 end
