@@ -9,9 +9,14 @@ class String
       end
     end
     if anaLength == word1.length && (word1.length == word2.length)
-      output = "True"
+      output = "These words are anagrams"
+      if word1.join == word1.join.reverse
+      output += " and the first word is also a palindrome!"
     else
-      output = "False"
+      output += " but the first word is not a palindrome"
+    end
+    else
+      output = "This is not an anagram"
     end
     output
   end
