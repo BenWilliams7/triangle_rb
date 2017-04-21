@@ -3,10 +3,10 @@ require("rspec")
 require("pry")
 
 describe "String#anagram" do
-  it("Returns false if two words are not anagrams.") do
+  it("Recognizes if two words are not anagrams.") do
     expect("ruby".anagram("hard")).to(include("This is not an anagram"))
   end
-  it("Returns true if two words are anagrams.") do
+  it("Recognizes if two words are anagrams.") do
     expect("ruby".anagram("bury")).to(include("These words are anagrams"))
   end
   it("Returns false if the length is not equal") do
