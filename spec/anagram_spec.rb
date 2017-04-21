@@ -24,7 +24,10 @@ describe "String#anagram" do
   it("Returns an error if anagrams do not include vowels") do
     expect("ruby".anagram("rrrr")).to(eq("This is not a word because it has no vowels!"))
   end
-  it("Doesn't care about non-letter characters") do
+  it("Doesn't care about non-letter characters for word1") do
     expect("ru by!".anagram("bury")).to(include("These words are anagrams"))
+  end
+  it("Doesn't care about non-letter characters for word2") do
+    expect("ruby!".anagram("bu ry")).to(include("These words are anagrams"))
   end
 end

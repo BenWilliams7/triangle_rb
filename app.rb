@@ -8,7 +8,9 @@ get('/') do
   erb(:index)
 end
 
-get('/anagram') do
-  @output = params.fetch('anagram').to_i.anagram()
+get('/anagramFunction') do
+  word1 = params.fetch('word1')
+  word2 = params.fetch('word2')
+  @output = 'word1'.anagram('word2')
   erb(:anagram)
 end
