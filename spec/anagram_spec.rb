@@ -21,4 +21,7 @@ describe "String#anagram" do
   it("Returns a note if anagrams are indeed palindromes") do
     expect("hannah".anagram("nnaahh")).to(include(" and the first word is also a palindrome!"))
   end
+  it("Returns an error if anagrams do not include vowels") do
+    expect("ruby".anagram("rrrr")).to(eq("This is not a word because it has no vowels!"))
+  end
 end
