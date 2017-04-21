@@ -21,7 +21,11 @@ class String
           output += " but the first word is not a palindrome"
         end
       else
-        output = "This is not an anagram"
+        if anaLength == 0
+          output = "This is not an anagram BUT it is an antigram!"
+        else
+        output = "This is not an anagram or an antigram"
+        end
       end
     elsif lackVowels == 0
       output = "This is not a word because it has no vowels!"
